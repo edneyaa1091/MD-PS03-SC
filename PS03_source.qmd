@@ -59,10 +59,10 @@ Examine `txhousing` in the data viewer. You can accomplish this two different wa
 ::: {.callout-important icon="false" collapse="false" title="Problem 1 Answers"}
 ```{r}
 # Type your code and comments inside the code chunk
-
+tail(txhousing$city,1)
 ```
 
--   Delete this and put your text answer here.
+-   Wichita Falls.
 :::
 
 ::: {.callout-note icon="false" title="Problem 2"}
@@ -70,7 +70,7 @@ Examine the variable descriptions by typing `?txhousing` in the **console**. Wha
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 2 Answers"}
--   Delete this and put your text answer here.
+-   **Total active listings.**
 :::
 
 # Data Wrangling Review
@@ -241,6 +241,8 @@ Write a code chunk to remove the inventory variable. Save the results in a data 
 ::: {.callout-important icon="false" collapse="false" title="Problem 3 Answers"}
 ```{r}
 # Type your code and comments inside the code chunk
+txhousing<-txhousing |>
+  select(-inventory)
 
 ```
 :::
@@ -256,7 +258,9 @@ txhousing |>
 ::: {.callout-important icon="false" collapse="false" title="Problem 4 Answers"}
 ```{r}
 # Type your code and comments inside the code chunk
-
+dallas_sub<-txhousing|>
+  filter(city=="Dallas" & year==2012, year==2013)
+head(dallas_sub)
 ```
 :::
 
