@@ -259,7 +259,8 @@ txhousing |>
 ```{r}
 # Type your code and comments inside the code chunk
 dallas_sub<-txhousing|>
-  filter(city=="Dallas" & year==2012, year==2013)
+  filter(city=="Dallas", year %in% c(2012,2013))
+glimpse(dallas_sub)
 head(dallas_sub)
 ```
 :::
